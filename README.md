@@ -38,7 +38,7 @@ Currently, the only dump format supported is the minidump format, used by Google
 
 ### 📝 To-do
 
-- [ ] **Demo**: produce a GitHub Pages demo branch
+- [x] **Demo**: produce a GitHub Pages demo branch
 - [ ] **Symbols**: the names and other source information that helps enrich a dump
   - [ ] **Symbolication**: the process of enriching a dump using symbols
   - [ ] **Symbol Servers**: ability to specify servers to fetch symbols from
@@ -47,14 +47,17 @@ Currently, the only dump format supported is the minidump format, used by Google
     - This symbol proxy should be able to run locally as well as deployed.
 - [ ] **Modules**: a view for the modules in a dump
 - [ ] **Sidebar**: it would be nice for the sidebar to actually do something :) but at least it looks pretty.
+- [ ] **Dark theme**: your eyes are important.
 
 ## How Do I Use It?
 
-If you need a [**sample file** to test with](./meta/sample-full.dmp), I've included one in this repo! 😊
+If you need a [**sample file** to test with][sample-dmp], I've included one in this repo! 😊 I have 'borrowed' this dump from the [rust-minidump project's test files](https://github.com/rust-minidump/rust-minidump/blob/main/testdata/full-dump.dmp).
 
-### 🌐 ~~Web~~
+[sample-dmp]: ./meta/sample-full.dmp
 
-I'm working on getting a static build of Dumpy uploaded to a GitHub Pages site. In the meantime, you can also choose to run the application locally.
+### 🌐 Web
+
+You can [try the online demo](https://clavin.github.io/Dumpy/). If you need one, you can use [this sample dump file][sample-dmp].
 
 ### 💻 Locally
 
@@ -62,6 +65,7 @@ What you'll need:
 
 - A recent version of Node.js, I'd ballpark it to be version 16+
   - NPM, which generally comes with Node.js
+- [wasm-pack](https://rustwasm.github.io/wasm-pack/) to build the dump processor
 
 0. Grab your copy of this repository
 
@@ -76,13 +80,25 @@ What you'll need:
    $ npm install
    ```
 
-2. Build the web app
+2. Build the dump processor crate
+
+  ```sh
+  $ cd crate
+  $ wasm-pack build
+
+  $ cd ..
+  ```
+
+3. Build the web app
 
    ```sh
    $ npm run build
+
+   # (If you need to specify any additional Vite options, like `--base`, this is
+   # the place to do it.)
    ```
 
-3. Enjoy! The web app is available in the `dist/` directory. 🎉
+4. Enjoy! The web app is available in the `dist/` directory. 🎉
 
 - Alternatively, if you're looking to hack on Dumpy, I would recommend using the `npm run dev` command for an ergonomic web development workflow.
 
