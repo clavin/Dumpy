@@ -1,4 +1,4 @@
-<center>
+<div align="center">
 <img src="./src/assets/dumpy.svg" alt="./src/assets/dumpy.svg" />
 
 _Hiya, I'm **Dumpy**._
@@ -7,7 +7,7 @@ _I'm the crash assistant and my job is to help you with your (crash) dumps._
 
 ✧･ﾟ: \* ✦ . ･ﾟ
 
-</center>
+</div>
 
 # 📄 Dumpy
 
