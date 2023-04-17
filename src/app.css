@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .size-full {
+    @apply h-full w-full;
+  }
+  .z-stack {
+    @apply grid place-items-stretch;
+    grid-template: 100% / 100%;
+  }
+  .z-stack > * {
+    @apply col-span-full row-span-full;
+  }
+  .font-black {
+    font-family: 'Archivo Black', 'Archivo', 'Inter', sans-serif;
+  }
+  .font-code {
+    font-family: 'JetBrains Mono', 'Fira Code', monospace;
+  }
+}
